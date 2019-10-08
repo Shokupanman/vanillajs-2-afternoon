@@ -173,3 +173,19 @@ window.addEventListener("keypress", function(keyPressEvent) {
 ## Contributions
 
 If you see a problem or a typo, please fork, make the necessary changes, and create a pull request so we can review your changes and merge them into the master repo and branch.
+
+//your attempt
+window.addEventListener("keypress", function(keyPressEvent) {
+      const tone = document.querySelector(
+        `auudio[data-key="${keyPressEvent.keyCode}"]`
+      );
+      if (!tone) return;
+      const pianoKey = document.querySelector(
+        `.pianoKey[data-key='${keyPressEvent.keyCode}']`
+      );
+      tone.currentTime = 0;
+      tone.play() ;
+      setTimeout(function() {
+          pianoKey.classList.remove('pressed') ;
+      }, 300)
+    });
